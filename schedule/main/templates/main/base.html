@@ -15,6 +15,11 @@
 <body>
     <header id="header">
         <h1 class="logo">DevLab <span>Todo App</span></h1>
+		<div class="menu-wrap">
+			<span style="width: 40px;"  class="menu"></span>
+			<span style="width: 30px;" class="menu"></span>
+			<span style="width: 40px;" class="menu"></span>
+		</div>
     </header>
     <nav class="sidenav">
         <div class="who">
@@ -39,5 +44,22 @@
             {% endblock %}
         </div>
     </main>
+	<script>
+		const menu = document.querySelector('.menu-wrap');
+		const sidenav = document.querySelector('.sidenav');
+		console.log(menu, sidenav)
+		if (menu && sidenav)
+		
+		menu.onclick = (ev)=>{
+				if (sidenav.showing){
+					sidenav.style.transform = "translateX(-300px)";
+					sidenav.showing = false;
+				}else{
+					sidenav.style.transform = "translateX(0px)";
+					sidenav.showing = true;
+				}
+			}
+			
+	</script>
 </body>
 </html>

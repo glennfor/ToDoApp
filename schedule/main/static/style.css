@@ -110,6 +110,7 @@ body{
     box-shadow: 0px 10px 25px -5px  rgb(99, 206, 144);
     box-shadow: 0 15px 25px 15px  rgb(99, 206, 144);
     text-align: center;
+	text-justify: center;
     z-index: 10;
 }
 
@@ -123,6 +124,22 @@ body{
 }
 
 /* side nav bar */
+.menu-wrap{
+	position: absolute;
+	top: 22px;
+	right: 50px;
+	display: none;
+}
+	
+.menu{
+	display: block;
+	height: 5px;
+	background-color: rgb(99, 206, 144);
+	margin: 6px 0;
+}
+
+
+
 
 .sidenav{
     position: fixed;
@@ -131,6 +148,7 @@ body{
     bottom: 0;
     width: 300px;
     background-color:rgba(0, 0, 0, 1) ;
+	transition: all 300ms ease-in-out;
 }
 
 
@@ -140,6 +158,7 @@ body{
     text-align: center;
     background-color: rgba(0, 0, 0, .2);
 }
+
 .who h2{
     padding: 10px 25px;
     margin: 5px 10px;
@@ -211,3 +230,19 @@ body{
     box-shadow: 0 0 25px -5px  rgb(99, 206, 144);
     border-radius: 25px;
 }
+
+
+@media(max-width: 950px){
+	.sidenav{
+		transform: translateX(-300px);
+	}
+	.menu-wrap{
+		display: block;
+	}
+	#main{
+		margin-left: 0px;
+		width: 100%;
+	}
+}
+	
+	
