@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+
+{% block content%}
+    <p style="font-size: 60px; font-weight: 800;">🏡Your are HOME!!!🏡</p>
+    {% if not user.is_authenticated%}
+        <h4>You are not logged in!</42>
+        <p>Login <a href="/login">Here</a> | Sign Up <a href="/register">Here</a></p>
+
+    {% else %}
+        <p>Create a <a href="/create">New List</a> </p>
+    {% endif %}
+{% endblock %}

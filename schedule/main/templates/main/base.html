@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'style.css' %}">
+    <title>
+        {% block title %}
+        Django Todo App
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header id="header">
+        <h1 class="logo">DevLab <span>Todo App</span></h1>
+    </header>
+    <nav class="sidenav">
+        <div class="who">
+            {% if user.is_authenticated %}
+                <h2>😎 {{user.username.title}}</h2>
+                <p>Log Out <a href="/logout">Here</a></p>
+            {% else %}
+                <h2>🐱‍👤 Anonym</h2>
+                <p>Log In <a href="/login">Here</a></p>
+            {% endif %}
+        </div>
+        <hr style="width: 80%; margin: auto; ">
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/create">Create</a></li>
+            <li><a href="/view">View</a></li>
+        </ul>
+    </nav>
+    <main id="main">
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+
+{% block title %}
+    View 
+{% endblock %}
+
+
+{% block content %}
+    <h2>Your Todo Agendas</h2>
+    <hr style="height: 2px; margin: 10px auto; color: rgb(99, 206, 144);">
+    {% if user.is_authenticated %}
+        <ul class="dv-list-group">
+        {% for agenda in user.agendalist.all %}
+        
+            <li class="list-item" >
+                <a href="/{{agenda.id}}"> {{agenda.name}}</a>
+                <a href="/delete/list/{{agenda.id}}" inherit="no" class="pull-right" style="background-color: rgb(219, 15, 15); color: #fff;" >Delete</a>
+
+            </li>
+            <hr style="margin: 10px auto; color: rgb(99, 206, 144);">
+
+        {% endfor %}     
+        </ul>   
+    {% else %}
+        <h4>You are not logged in!</h4>
+        <p>Login <a href="/login">Here</a> | Sign Up <a href="/register">Here</a></p>
+    {% endif %}
+    <a href="/create" style="background-color:rgb(99, 206, 144); color: #fff; padding: 10px 20px; border-radius: 5px;" >Create A New List</a>
+
+    
+{%endblock%}

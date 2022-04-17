@@ -1,0 +1,213 @@
+*{
+    font-family: "Poppins", "Raleway", "montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Some general styles */
+a{
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: rgb(99, 206, 144);
+    background-color: rgb(255, 255, 255, .5);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 300ms;
+}
+
+p{
+    font-size: 18px;
+}
+
+input{
+    font-size: 20px;
+    padding: 2px 5px;
+    border: 1px solid rgb(99, 206, 144);
+    outline: none;
+}
+
+button{
+    color: #fff; 
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: rgb(99, 206, 144);
+    border: none;
+    margin: 8px 5px;
+    cursor: pointer;
+}
+button:hover{
+    box-shadow: 0 5px 20px -5px  rgb(123, 253, 177);
+}
+
+a[inherit="no"]{
+    width: fit-content;
+    font-size: 18px;
+    text-align: center;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background-color: rgb(99, 206, 144);
+    border: none;
+}
+
+.dv-list-group{
+    list-style-type: none;
+    width: 100%;
+    margin: 20px;
+}
+
+
+.list-item{
+    text-align: left;
+    font-size: 18px;
+    padding: 2px auto;
+}
+.list-item::before{
+    content: '📌  '; 
+}
+
+.pull-right{
+    float: right;
+}
+
+
+form{
+    padding: 20px auto;
+}
+
+ul{
+    list-style: none;
+}
+li{
+    text-align: left;
+    display: block;
+}
+form li::before{
+    content: '📍 ';
+}
+
+small{
+    display: block;
+}
+
+
+
+
+
+body{
+    height: 100vh;
+}
+#header{
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(300px); */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 0px 10px 25px -5px  rgb(99, 206, 144);
+    box-shadow: 0 15px 25px 15px  rgb(99, 206, 144);
+    text-align: center;
+    z-index: 10;
+}
+
+#header .logo{
+    font-weight: 800;
+    color:rgb(99, 206, 144);
+}
+
+#header .logo span{
+    color: rgb(255, 255, 255);
+}
+
+/* side nav bar */
+
+.sidenav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    background-color:rgba(0, 0, 0, 1) ;
+}
+
+
+.who{
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .2);
+}
+.who h2{
+    padding: 10px 25px;
+    margin: 5px 10px;
+    border-radius: 5px;
+    background-color:rgb(99, 206, 144); ;
+}
+
+.who p{
+    margin: 10px 0px;
+}
+
+.who a{
+    padding: 5px 20px;
+    border-radius: 20px;
+    color: rgb(99, 206, 144);
+    background-color: rgb(255, 255, 255, .5);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 300ms;
+}
+
+
+.sidenav ul{
+    position: relative;
+    list-style: none;
+    padding: auto;
+    margin: 150px 100px;
+    margin-top: 50px;
+}
+.sidenav ul li {
+    padding: 20px 0px;
+    margin: 10px 0px;
+}
+
+.sidenav ul li a{
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: rgb(99, 206, 144);
+    background-color: rgb(255, 255, 255, .5);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    transition: all 300ms;
+    width: 30px;
+}
+
+.sidenav ul li:hover a{
+    color: rgb(255, 255, 255);
+    letter-spacing: 1.2px;
+    transform: scale(1.1);
+}
+
+
+#main{
+    margin-left: 300px;
+    background: linear-gradient(to bottom right, rgb(5, 155, 67), rgb(34, 175, 163), rgb(5, 155, 67));
+    height: 100%;
+    display: block;
+    padding-top: 40px;
+}
+
+.content{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    padding: 40px;
+    background-color: rgb(255, 255, 255, .5);
+    box-shadow: 0 0 25px -5px  rgb(99, 206, 144);
+    border-radius: 25px;
+}

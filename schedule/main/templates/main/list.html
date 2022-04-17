@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+    <h2>{{agenda.name}}</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <ul class="dv-list-group">
+        {% for item in agenda.listitem_set.all %}
+        <hr style="margin: 10px auto; color: rgb(99, 206, 144);">
+
+            {% if item.done %}
+            <li class="list-item">
+                <input type="checkbox" name="c{{item.id}}" value="clicked" checked> 
+                {{item}}
+                <a href="delete/item/{{agenda.id}}/{{item.text}}" inherit="no" class="pull-right" style="background-color: rgb(219, 15, 15); color: #fff;" >Delete</a>
+            </li>
+            {% else %}
+            <li class="list-item">
+                <input type="checkbox" name="c{{item.id}}" value="clicked">{{item}}
+                <a href="delete/item/{{agenda.id}}/{{item.text}}" inherit="no" class="pull-right" style="background-color: rgb(219, 15, 15); color: #fff;" >Delete</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+
+        <button type="submit" name="save" value="save">Save</button>
+        <input type="text" name="new">
+        <button type="submit" name="newItem" value="newItem">Add Item</button>
+    </form>
+{%endblock%}
